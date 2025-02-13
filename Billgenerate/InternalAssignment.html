@@ -1,0 +1,123 @@
+<html>
+    <head><title>Booking</title>
+     <style>
+            input[type=text]:focus {
+           background-color: rgb(176, 224, 230);
+        }
+        table,th,td {
+      border: 1px solid white;
+      border-collapse: collapse;
+      background-color: black;
+      }
+      td,th{color: white;}
+    </style> 
+    
+    </head>
+
+     <body style="text-align: -webkit-center">  
+        <div class="container"></div>
+         <center>
+         <h1>Ticket Booking Application</h1>
+ 
+           <table >
+   
+        <tr>
+            <td colspan="1" >Location</td>
+            <td colspan="1"> <input type="text" id="location" required="required"></td>
+        </tr>
+          <tr>
+              <td colspan="1">price per seat</td>
+              <td colspan="1"><input type="text"  id="price"  required="required" id=""></td>
+          </tr>
+
+          <tr>
+              <td colspan="1">No of Seats</td>
+              <td colspan="1"><input type="text"  id="seat" required="required"></td>
+          </tr>
+
+       <tr>
+        <td colspan="2"> <center><input type="button" value="Book" id="btn" onclick="execute()"></center></td>
+       </tr>
+ </table>
+</center>
+<br><br>
+<table>
+<tr>
+<th colspan="1">Location</th>
+<th colspan="1">Price per Seat</th>
+<th colspan="1">No of Seats </th>
+<th colspan="1">Total price</th>
+</tr>
+
+<tr>
+<td colspan="1" id="loc"></td>
+
+<td colspan="1"  id="pr"></td>
+
+<td colspan="1" id="seat2"></td>
+
+<td colspan="1"  id="total"></td>
+
+</tr>
+<tr>
+    <td colspan="3">Total price</td>
+    <td colspan="1" id="total2"></td>
+</tr>
+
+<table>
+<br><br>
+
+<tr>
+    <input type="button"  id="btn" value="Prepare Bill" onclick="bill()">
+</tr>
+<br>
+<div>
+    <td>Your Total Bill:</td>
+    <td id="td1" ></td>
+</tr>
+<br>
+<tr>
+    <td>Gst is:</td>
+    <td id="td2"></td>
+</tr>
+<br>
+<tr>
+  <td>Final Bill is</td>
+  <td id="td3"></td>
+</tr>
+</table>
+<script>
+function execute(){
+   var location=document.getElementById("location");
+   var price=document.getElementById("price");
+   var seat=document.getElementById("seat");
+   var loc=document.getElementById("loc");
+   var pr1=document.getElementById("pr");
+   var seat2=document.getElementById("seat2");
+   var total1=document.getElementById("total");
+   var total2=document.getElementById("total2");
+
+   loc.innerText=location.value;
+   pr1.innerText=price.value;
+   seat2.innerText=seat.value;
+   total1.innerText=price.value*seat.value;
+   total2.innerText=price.value*seat.value;
+}
+
+function bill()
+{
+  var price=document.getElementById("price");
+  var seat =document.getElementById("seat");
+  var td1=document.getElementById("td1");
+  var td2=document.getElementById("td2");
+  var td3=document.getElementById("td3");
+
+  td1.innerText=price.value*seat.value;
+  td2.innerText=price.value*seat.value*0.18;
+  td3.innerText=(price.value*seat.value)+(price.value*seat.value*0.18);
+
+
+}
+</script>
+</body>
+</html>
